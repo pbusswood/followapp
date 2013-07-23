@@ -1,12 +1,20 @@
 Followapp::Application.routes.draw do
   devise_for :users
+  
   resources :contacts
+  get "dashboard", to: "contacts#index", as: :dashboard
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  devise_scope :user do
+    get "register", :to => "devise/registrations#new"
+    get "login", :to => "devise/sessions#new"
+    get "logout", :to => "devise/sessions#destroy"
+  end
 
   # You can have the root of your site routed with "root"
   root 'contacts#index'
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
