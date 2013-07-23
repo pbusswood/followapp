@@ -244,3 +244,12 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 end
+
+DeviseController.class_eval do
+  def resource_params
+    unless params[resource_name].blank?
+      params.require(resource_name).permit(:email, :password, :password_confirmation,
+                                           :remember_me, :first_name, :last_name, :username)
+    end
+  end
+end
