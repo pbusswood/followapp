@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <div class="row">
   <h3>Dashboard</h3>
 </div>
@@ -96,4 +98,12 @@
 </div>
 <br>
 
+<% else %>
 
+<div class="hero-unit">
+  <h1>Simple, powerful relationship management.</h1>
+  <p class="lead">Connect your contacts and build stronger relationships.</p>
+  <p><%= link_to "Get Started", login_path, class: 'btn btn-large btn-success' %></p>
+</div>
+
+<% end %>
