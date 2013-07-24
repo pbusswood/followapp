@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722224111) do
+ActiveRecord::Schema.define(version: 20130723144229) do
 
   create_table "contacts", force: true do |t|
     t.string   "contact_first_name"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20130722224111) do
   end
 
   add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+
+  create_table "reminders", force: true do |t|
+    t.date     "reminder"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
