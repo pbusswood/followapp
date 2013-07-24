@@ -1,35 +1,99 @@
-<h1>Listing contacts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Contact first name</th>
-      <th>Contact last name</th>
-      <th>Contact email</th>
-      <th>Contact mobile</th>
-      <th>Contact phone</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @contacts.each do |contact| %>
+<div class="row">
+  <h3>Dashboard</h3>
+</div>
+<div class="row">
+  <div class="span3">
+    <h1 class="faDashboardDigits">45</h1>
+    <h4 align="center">New Contacts</h4>
+  </div>
+  <div class="span3">
+    <h1 class="faDashboardDigits">218</h1>
+    <h4 align="center">Active Reminders</h4>
+  </div>
+  <div class="span3">
+    <h1 class="faDashboardDigits">82</h1>
+    <h4 align="center">Campaigns</h4>
+  </div>
+  <div class="span3">
+    <h1 class="faDashboardDigits">24</h1>
+    <h4 align="center">Inactive Contacts</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="span3" align="center">
+    <%= link_to 'Add Contact', new_contact_path, class: 'btn btn-info' %>
+  </div>
+  <div class="span3" align="center">
+    <a href="#" class="btn btn-info">Create Reminder</a>
+  </div>
+  <div class="span3" align="center">
+    <a href="#" class="btn btn-info">Start Campaign</a>
+  </div>
+  <div class="span3" align="center">
+    <a href="#" class="btn btn-info">Re-engage Contact</a>
+  </div>
+</div>
+<div class="row faTablePadding">
+  <h3>Top Ten Contacts Based On Interactions</h3>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= contact.contact_first_name %></td>
-        <td><%= contact.contact_last_name %></td>
-        <td><%= contact.contact_email %></td>
-        <td><%= contact.contact_mobile %></td>
-        <td><%= contact.contact_phone %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Contact First Name</th>
+        <th>Contact Last Name</th>
+        <th>Contact Email</th>
+        <th>Contact Mobile</th>
+        <th>Contact Phone</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.contact_first_name %></td>
+          <td><%= contact.contact_last_name %></td>
+          <td><%= contact.contact_email %></td>
+          <td><%= contact.contact_mobile %></td>
+          <td><%= contact.contact_phone %></td>
+          <td><%= link_to 'Show', contact %></td>
+          <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+          <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="row faTablePadding">
+  <h3>Most Recent Reminders</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Contact First Name</th>
+        <th>Contact Last Name</th>
+        <th>Contact Email</th>
+        <th>Contact Mobile</th>
+        <th>Contact Phone</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.contact_first_name %></td>
+          <td><%= contact.contact_last_name %></td>
+          <td><%= contact.contact_email %></td>
+          <td><%= contact.contact_mobile %></td>
+          <td><%= contact.contact_phone %></td>
+          <td><%= link_to 'Send A Message', contact.contact_email, class: 'btn btn-success' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+
