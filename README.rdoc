@@ -1,3 +1,13 @@
+== Follow App
+A relationship management application. 
+
+Where you can:
+*Add new contacts
+*Have active relationship reminders
+*Start new compaigns
+*See your inactive contacts
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
