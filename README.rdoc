@@ -2,10 +2,10 @@
 A relationship management application. 
 
 Where you can:
-*Add new contacts
-*Have active relationship reminders
-*Start new compaigns
-*See your inactive contacts
+* Add new contacts
+* Have active relationship reminders
+* Start new compaigns
+* See your inactive contacts
 
 
 == README
