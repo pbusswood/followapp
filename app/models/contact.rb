@@ -19,6 +19,3 @@ class Contact < ActiveRecord::Base
    					message: "Mobile phone numbers can't have letters"
    				}
 end
-
-
-#make phone validations work
