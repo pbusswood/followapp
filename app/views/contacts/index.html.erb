@@ -90,7 +90,7 @@
           <td><%= contact.email %></td>
           <td><%= contact.mobile %></td>
           <td><%= contact.phone %></td>
-          <td><%= link_to 'Send A Message', contact.email, class: 'btn btn-success' %></td>
+          <td><%= mail_to contact.email, 'Send A Message', class: 'btn btn-success' %></td>
         </tr>
       <% end %>
     </tbody>
